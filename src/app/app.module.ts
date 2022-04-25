@@ -18,6 +18,7 @@ import { RouterModule } from '@angular/router';
     RouterModule.forRoot([  // forRoot : 객체 배열을 인자로 받아 개별 객체마다 라우팅 규칙을 정의
       {path: 'crisis-list', component: CrisisListComponent},
       {path: 'heroes-list', component: HeroesListComponent},
+      {path: '', redirectTo: '/heroes-list', pathMatch: 'full'}, // 빈 주소 접근시 리다이렉트 path 정의
     ]),
   ],
   providers: [],
