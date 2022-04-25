@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { CrisisListComponent } from './crisis-list/crisis-list.component';
 import { HeroesListComponent } from './heroes-list/heroes-list.component';
 
+import { RouterModule } from '@angular/router';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -12,7 +14,11 @@ import { HeroesListComponent } from './heroes-list/heroes-list.component';
     HeroesListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot([  // forRoot : 객체 배열을 인자로 받아 개별 객체마다 라우팅 규칙을 정의
+      {path: 'crisis-list', component: CrisisListComponent},
+      {path: 'heroes-list', component: HeroesListComponent},
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]
