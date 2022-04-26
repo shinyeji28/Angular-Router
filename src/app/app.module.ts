@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+
 import { CrisisListComponent } from './crisis-list/crisis-list.component';
 import { HeroesListComponent } from './heroes-list/heroes-list.component';
 
@@ -25,10 +27,7 @@ const appRoutes : Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(  // forRoot : 객체 배열을 인자로 받아 개별 객체마다 라우팅 규칙을 정의
-      appRoutes,
-      { enableTracing: true } // 디버그 활성화
-    ),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
